@@ -18,8 +18,8 @@ namespace Tiling
             get { return _layername; }
             set { _layername = value; }
         }
-        Tile[,] _tiles;
-        public Tile[,] Tiles
+        public static Tile[,] _tiles;
+        public static Tile[,] Tiles
         {
             get { return _tiles; }
             set { _tiles = value; }
@@ -103,6 +103,23 @@ namespace Tiling
             }
             sp.End();
             base.Draw(gameTime);
+        }
+
+        public static List<Tile> getNamedTiles(string name)
+        {
+            List<Tile> foundTiles = new List<Tile>();
+
+            for (int x = 0; x < Tiles.GetLength(0); x++)  // look at columns in row
+                for (int y = 0; y < Tiles.GetLength(1); y++) // look at rows
+                {
+                    if (Tiles[y, x].TileName == name) foundTiles.Add(Tiles[y, x]);
+                }
+
+
+            return foundTiles;
+
+                
+
         }
     }
 }

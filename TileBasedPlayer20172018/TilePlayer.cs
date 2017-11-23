@@ -56,6 +56,13 @@ namespace Tiler
                 this.angleOfRotation -= turnspeed;
             if (Keyboard.GetState().IsKeyDown(Keys.X))
                 this.angleOfRotation += turnspeed;
+            // Check for collisions
+
+            var colliders = Game.Components.Where(c => c.GetType() == typeof(Collider));
+            foreach (var collider in colliders)
+            {
+
+            }
 
             base.Update(gameTime);
         }

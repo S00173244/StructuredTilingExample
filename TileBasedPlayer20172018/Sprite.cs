@@ -156,7 +156,7 @@ namespace AnimatedSprite
                         FrameWidth, FrameHeight);
             
             }
-        public bool collisionDetect(AnimateSheetSprite other)
+        public virtual bool collisionDetect(AnimateSheetSprite other)
         {
             Rectangle myBound = new Rectangle((int)this.PixelPosition.X, (int)this.PixelPosition.Y, this.FrameWidth, this.FrameHeight);
             Rectangle otherBound = new Rectangle((int)other.PixelPosition.X, (int)other.PixelPosition.Y, other.FrameWidth, other.FrameHeight);

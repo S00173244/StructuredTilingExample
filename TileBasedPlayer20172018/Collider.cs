@@ -47,7 +47,8 @@ namespace Tiler
         }
         public override void Update(GameTime gameTime)
         {
-            TilePlayer p = (TilePlayer)Game.Services.GetService(typeof(TilePlayer));
+            //TilePlayer p = (TilePlayer)Game.Services.GetService(typeof(TilePlayer));
+            TilePlayer p = Game.Services.GetService<TilePlayer>();
             if (p == null) return;
             else
             {
